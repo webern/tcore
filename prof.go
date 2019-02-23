@@ -7,7 +7,7 @@ import (
 	"runtime/pprof"
 	"time"
 
-	"github.com/bitflip-software/iqbid/blaze/flog"
+	"github.com/webern/flog"
 )
 
 func StartPPROF(outFilepath string) *os.File {
