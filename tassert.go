@@ -57,3 +57,19 @@ func TAssertDeep(statement string, got, want interface{}) (failureMessage string
 func tmsg(statement, got, want string) string {
 	return fmt.Sprintf("%s = '%s', want '%s'", statement, got, want)
 }
+
+func TAssertNil(statement string, got interface{}) (msg string, ok bool) {
+	if got != nil {
+		return fmt.Sprintf("'%s' was expected to be nil but was not nil", statement), false
+	}
+
+	return "", true
+}
+
+func TAsserNotNil(statement string, got interface{}) (msg string, ok bool) {
+	if got == nil {
+		return fmt.Sprintf("'%s' was expected to be non nil but was nil", statement), false
+	}
+
+	return "", true
+}
